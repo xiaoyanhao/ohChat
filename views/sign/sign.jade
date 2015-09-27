@@ -1,0 +1,19 @@
+extends ../layout/layout
+  
+block link
+  link(rel='stylesheet' type='text/css' href='/sign/sign.css')
+  link(rel='stylesheet' type='text/css' href='/sign/signup/signup.css')
+  link(rel='stylesheet' type='text/css' href='/sign/signin/signin.css')
+
+block script
+  script(type='text/javascript' src='/sign/nav/nav.js')
+  script(type='text/javascript' src='/sign/signup/signup.js')
+  script(type='text/javascript' src='/sign/signin/signin.js')
+
+block header
+  include nav/nav
+
+block content
+  #sign-content.signin
+    include signin/signin
+    include signup/signup

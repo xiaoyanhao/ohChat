@@ -1,0 +1,24 @@
+extends ../layout/layout
+  
+block link
+  //- link(rel='stylesheet' type='text/css' href='/chat/chat.css')
+  link(rel='stylesheet' type='text/css' href='/chat/room/room.css')
+  link(rel='stylesheet' type='text/css' href='/chat/input/input.css')
+  link(rel='stylesheet' type='text/css' href='/chat/voice/voice.css')
+  link(rel='stylesheet' type='text/css' href='/chat/text/text.css')
+  link(rel='stylesheet' type='text/css' href='/chat/more/more.css')
+
+block script
+  script(type='text/javascript' src='/chat/input/input.js')
+  script(type='text/javascript' src='/chat/voice/voice.js')
+  script(type='text/javascript' src='/chat/text/text.js')
+  script(type='text/javascript' src='/chat/more/more.js')
+
+block header
+  include header/header
+
+block content
+  include room/room
+
+block footer
+  include input/input

@@ -1,0 +1,18 @@
+#chat-text
+  textarea.input-text
+  a.chat-emoji.btn-floating(href='#')
+    i.material-icons mood
+
+.chat-send-button.center.hide
+  a.btn.waves-effect.waves-light 发送
+
+.chat-emoji-slider.slider    
+  ul.slides
+    - var unicode = 128512, page = 1
+    while page <= 4
+      li.slide
+        while unicode < 128512 + 20 * page
+          button &##{unicode}
+          - unicode++
+        button ⌫
+      - page++

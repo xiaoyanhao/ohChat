@@ -1,0 +1,17 @@
+extends ../layout/layout
+  
+block link
+  //- link(rel='stylesheet' type='text/css' href='/moment/moment.css')
+  link(rel='stylesheet' type='text/css' href='/moment/cover/cover.css')
+  link(rel='stylesheet' type='text/css' href='/moment/post/post.css')
+
+block script
+  script(type='text/javascript' src='/moment/post/post.js')
+
+block header
+  include header/header
+
+block content
+  include cover/cover
+  include post/post
+

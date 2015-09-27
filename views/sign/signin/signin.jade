@@ -1,0 +1,22 @@
+#signin
+  include ../logo/logo
+
+  form
+    .row.container
+      .input-field.col.s12.email-input
+        i.mdi-social-person.prefix
+        input#signin-email.validate(type='email' name='email' required)
+        label(for='signin-email') 邮箱
+      .input-field.col.s12.password-input
+        i.mdi-action-lock.prefix
+        input#signin-password.validate(type='password' name='password' pattern='.{6,}' title='密码长度至少为6位' required)
+        label(for='signin-password') 密码
+      p.col.s12
+        //- input#signin-remember(type='checkbox')
+        //- label(for='signin-remember') 记住密码
+        a#forget-password.right(href='#') 忘记密码？
+      .input-field.col.s12
+        button.waves-effect.waves-light.btn(type='submit')
+          i.mdi-content-forward
+
+  include ../oauth/oauth

@@ -1,0 +1,48 @@
+#home-contacts
+  .home-contacts-list
+    .scrollspy(id='home-contacts-index-top')
+      ul.collection
+        li.collection-item 新的朋友
+          i.material-icons.left person_add
+        li.collection-item 群聊
+          i.material-icons.left group
+        li.collection-item 标签
+          i.material-icons.left label
+        li.collection-item 公众号
+          i.material-icons.left public
+
+    - var i = 27, title = 'A'
+    while i > 1
+      .scrollspy(id='home-contacts-index-#{title}')
+        ul.collection.with-header
+          li.collection-header= title
+          - var j = 3
+          while j > 0
+            li.collection-item name
+              i.material-icons.left face
+            - j--
+      - i--, title = String.fromCharCode(title.charCodeAt(0) + 1)
+
+    .scrollspy(id='home-contacts-index-#')
+      ul.collection.with-header
+        li.collection-header #
+          - var j = 3
+          while j > 0
+            li.collection-item name
+              i.material-icons.left face
+            - j--
+
+
+  .home-contacts-index
+    ul.table-of-contents.fixed
+      li
+        a(href='#home-contacts-index-top') ↑
+      - var i = 27, title = 'A'
+      while i > 1
+        li
+          a(href='#home-contacts-index-#{title}')= title
+        - i--, title = String.fromCharCode(title.charCodeAt(0) + 1)
+
+      li
+        a(href='#home-contacts-index-#') #
+

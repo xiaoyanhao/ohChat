@@ -1,0 +1,23 @@
+#signup
+  form
+    .row.container
+      .input-field.col.s12.email-input
+        input#signup-email.validate(type='email' name='email' required)
+        label(for='signup-email') 邮箱
+      .input-field.col.s12.username-input
+        input#signup-username.validate(type='text' name='username' required)
+        label(for='signup-username') 用户名
+      .input-field.col.s12.password-input
+        input#signup-password.validate(type='password' name='password' pattern='.{6,}' title='密码长度至少为6位' required)
+        label(for='signup-password') 密码
+      .input-field.col.s12.password-input
+        input#signup-password-verified.validate(type='password' name='password_verified' pattern='.{6,}' title='密码长度至少为6位' required)
+        label(for='signup-password-verified') 确认密码
+      .input-field.col.s12
+        button.waves-effect.waves-light.btn(type='submit')
+          i.mdi-social-person-add
+
+  #signup-verify.modal
+    .modal-content
+      h5.center 恭喜您，注册成功！
+      p 已发送验证邮件，请到您的注册邮箱查看并激活链接。

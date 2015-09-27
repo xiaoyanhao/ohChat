@@ -1,0 +1,25 @@
+extends ../layout/layout
+  
+block link
+  link(rel='stylesheet' type='text/css' href='/home/home.css')
+  link(rel='stylesheet' type='text/css' href='/home/nav/nav.css')
+  link(rel='stylesheet' type='text/css' href='/home/chats/chats.css')
+  link(rel='stylesheet' type='text/css' href='/home/contacts/contacts.css')
+  link(rel='stylesheet' type='text/css' href='/home/discovery/discovery.css')
+  link(rel='stylesheet' type='text/css' href='/home/me/me.css')
+
+block script
+  script(type='text/javascript' src='/home/nav/nav.js')
+
+block header
+  include header/header
+
+block content
+  .home-content
+    include chats/chats
+    include contacts/contacts
+    include discovery/discovery
+    include me/me
+
+block footer
+  include nav/nav

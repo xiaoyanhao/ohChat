@@ -1,0 +1,100 @@
+#chat-input
+  position: relative
+  height: 51px
+  z-index: 998
+
+  &.more
+    height: 251px
+    .chat-input
+      bottom: 200px
+      #chat-more a.btn-floating
+        border-color: #03a9f4 !important
+        i
+          color: #03a9f4 !important
+      .chat-more-slider
+        display: block
+      .chat-emoji-slider
+        display: none
+
+  &.emoji
+    height: 251px
+    .chat-input
+      bottom: 200px
+      #chat-text a.chat-emoji
+        border-color: #03a9f4 !important
+        i
+          color: #03a9f4 !important
+      .chat-more-slider
+        display: none
+      .chat-emoji-slider
+        display: block
+
+  &.voice
+    .chat-input
+      bottom: 0
+      #chat-text
+        display: none
+      #chat-voice
+        .chat-voice
+          display: none
+        .chat-keyboard, .hold-to-talk
+          display: block
+        .chat-more-slider, .chat-emoji-slider
+          display: none
+
+.chat-input
+  position: fixed
+  left: 0
+  bottom: 0
+  width: 100%
+  height: 51px
+  border: 1px solid #9e9e9e
+  background-color: white
+
+  .slider
+    position: fixed
+    left: 0
+    bottom: 0
+    width: 100%
+    height: 200px !important
+    margin: 0
+    padding: 0
+
+    .slides
+      width: 100%
+      height: 90% !important
+      margin: 0
+      padding: 0
+      top: 0
+      background-color: white
+      .slide
+        // height: 100%
+        margin: 0
+        padding: 0
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        justify-content: space-around
+        align-content: space-around
+
+    .indicators
+      height: 10%
+      background-color: white
+      .indicator-item
+        width: 8px
+        height: 8px
+        margin: 0 6px
+        &.active
+          background-color: #03a9f4
+
+  #chat-voice, #chat-text, #chat-more
+    a.btn-floating
+      background-color: white
+      border: 1px solid #9e9e9e
+      box-shadow: none
+      &:active
+        border-color: #03a9f4 !important
+        i
+          color: #03a9f4 !important
+      i
+        color: #9e9e9e !important

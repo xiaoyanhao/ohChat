@@ -1,0 +1,43 @@
+$primary-color: #03a9f4
+
+#sign-content
+  width: 100%
+  height: 100%
+  position: relative
+  overflow: hidden
+  touch-action: pan-y
+  -webkit-user-select: none
+  -webkit-user-drag: none
+
+  #signin, #signup
+    position: absolute
+    top: 0
+    left: 0
+    transition: all 0.5s
+    .input-field label::after
+      min-width: 300px
+
+    .email-invalid .email-input, .password-invalid .password-input
+      input
+        border-bottom: 1px solid #F44336
+        box-shadow: 0 1px 0 0 #F44336
+      label::after
+        color: #F44336
+
+  form .input-field.col button.btn
+    width: 100%
+
+
+  &.signup
+    #signin
+      transform: translateX(-100%)
+      opacity: 0
+    #signup
+      opacity: 1
+
+  &.signin
+    #signin
+      opacity: 1
+    #signup
+      transform: translateX(100%)
+      opacity: 0
