@@ -1,0 +1,15 @@
+#reset-password
+  include ../header/header
+  
+  form
+    .row.container
+      blockquote 验证成功！请设置新密码。
+      .input-field.col.s12.password-input
+        input#reset-password.validate(type='password' name='password' pattern='.{6,}' title='密码长度至少为6位' required)
+        label(for='reset-password') 密码
+      .input-field.col.s12.password-input
+        input#reset-password-verified.validate(type='password' name='password_verified' pattern='.{6,}' title='密码长度至少为6位' required)
+        label(for='reset-password-verified') 确认密码
+      .input-field.col.s12
+        button.waves-effect.waves-light.btn(type='submit')
+          i.material-icons done_all

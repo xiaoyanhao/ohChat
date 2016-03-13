@@ -1,23 +1,22 @@
-.home-nav
+#home-nav
   background-color: white
   nav
     bottom: 0
-  ul
-    display: flex
-    justify-content: space-between
-    height: 100%
-    li
-      height: 100% !important
-      background-color: white !important
-      a
-        font-size: 12px !important
-        line-height: 700%
-        color: #9e9e9e !important
-        &.active
-          color: #03a9f4 !important
+    .tabs
+      display: flex
+      justify-content: space-between
+      height: 100%
+      .tab
+        position: relative
+        height: 100%
+        line-height: 200%
+        color: #9e9e9e
         i
-          transform: translateY(-280%)
           margin: 0 auto
+          height: 50%
+          line-height: 140%
+        span
+          font-size: 12px
 
-    .indicator
-      display: none
+        &.active
+          color: #03a9f4

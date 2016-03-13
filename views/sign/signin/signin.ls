@@ -12,3 +12,7 @@ $ !->
         $ @ .add-class result.reason
       else
         location.replace result.url
+
+
+  $ '#signin' .hammer!bind 'swipeleft', (event)!->
+    $ '#sign-nav .signup-tab' .trigger 'click'

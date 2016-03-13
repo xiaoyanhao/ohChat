@@ -20,4 +20,6 @@ $ !->
           $ @ .remove-class 'email-invalid registered'
           $ '#signup-verify' .open-modal!
 
-
+$ !->
+  $ '#signup' .hammer!bind 'swiperight', (event)!->
+    $ '#sign-nav .signin-tab' .trigger 'click'

@@ -1,0 +1,15 @@
+#verify-email
+  include ../header/header
+  
+  form
+    .row.container
+      blockquote
+        |验证邮件已发送，请在
+        span.countdown.red-text 300
+        |秒内输入验证码。
+      .input-field.col.s12.verify-code-input
+        input#forget-verify-code.validate(type='text' name='verifyCode' required)
+        label(for='forget-verify-code') 验证码
+      .input-field.col.s12
+        button.waves-effect.waves-light.btn(type='submit')
+          i.material-icons done

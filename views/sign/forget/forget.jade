@@ -1,0 +1,12 @@
+#forget-password
+  include ../header/header
+  
+  form
+    .row.container
+      blockquote 发送验证邮件，重新设置密码。
+      .input-field.col.s12.email-input
+        input#forget-send-email.validate(type='email' name='email' required)
+        label(for='forget-send-email') 邮箱
+      .input-field.col.s12
+        button.waves-effect.waves-light.btn(type='submit')
+          i.material-icons send

@@ -1,4 +1,4 @@
-require! ['../models/User', 'bcrypt', 'crypto', 'passport-local', 'nodemailer']
+require! ['../models/User', 'bcrypt', 'crypto', 'passport-local', './send-email']
 local-strategy = passport-local.Strategy
 
 hash = (password)-> bcrypt.hash-sync password, 10
@@ -20,6 +20,8 @@ module.exports = (passport)!-> passport.use 'signup', new local-strategy {userna
       email: email
       state: 'unverified' 
       signup-token: token
+      reset-password-token: null
+      reset-password-expire: null
 
     (error) <-! new-user.save
     if error
@@ -28,11 +30,6 @@ module.exports = (passport)!-> passport.use 'signup', new local-strategy {userna
     else
       console.log "Succeed in registering user"
       done null, new-user, {error: false}
-      transporter = nodemailer.create-transport do
-        service: 'Gmail'
-        auth:
-          user: 'yanhaoxiao@gmail.com'
-          pass: 'BboyMax2704'
 
       mail-options =
         from: 'yanhaoxiao@gmail.com'
@@ -45,8 +42,4 @@ module.exports = (passport)!-> passport.use 'signup', new local-strategy {userna
         '如果这是非本人操作，请忽略该邮件。<br><br>' +
         '此致<br>ohChat团队敬上'
 
-      (err, info) <-! transporter.send-mail mail-options
-      if err
-        console.log err
-      else
-        console.log 'Message sent: ' + info.response      
+      send-email mail-options

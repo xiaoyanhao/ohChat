@@ -1,5 +1,24 @@
-$primary-color: #03a9f4
+#home
+  &.chats
+    #home-chats
+      display: block
+    #home-contacts, #home-discovery, #home-me
+      display: none
 
-ul#nav-dropdown
-  top: 100% !important
-  width: 170px !important
+  &.contacts
+    #home-contacts
+      display: block
+    #home-chats, #home-discovery, #home-me
+      display: none
+
+  &.discovery
+    #home-discovery
+      display: block
+    #home-chats, #home-contacts, #home-me
+      display: none
+
+  &.me
+    #home-me
+      display: block
+    #home-chats, #home-contacts, #home-discovery
+      display: none

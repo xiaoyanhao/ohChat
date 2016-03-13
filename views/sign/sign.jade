@@ -4,16 +4,25 @@ block link
   link(rel='stylesheet' type='text/css' href='/sign/sign.css')
   link(rel='stylesheet' type='text/css' href='/sign/signup/signup.css')
   link(rel='stylesheet' type='text/css' href='/sign/signin/signin.css')
+  link(rel='stylesheet' type='text/css' href='/sign/forget/forget.css')
+  link(rel='stylesheet' type='text/css' href='/sign/verify/verify.css')
+  link(rel='stylesheet' type='text/css' href='/sign/reset/reset.css')
 
 block script
-  script(type='text/javascript' src='/sign/nav/nav.js')
+  script(type='text/javascript' src='/sign/sign.js')
   script(type='text/javascript' src='/sign/signup/signup.js')
   script(type='text/javascript' src='/sign/signin/signin.js')
+  script(type='text/javascript' src='/sign/forget/forget.js')
+  script(type='text/javascript' src='/sign/verify/verify.js')
+  script(type='text/javascript' src='/sign/reset/reset.js')
 
-block header
-  include nav/nav
 
 block content
-  #sign-content.signin
-    include signin/signin
-    include signup/signup
+  #sign
+    include nav/nav
+    #sign-content
+      include signin/signin
+      include signup/signup
+    include forget/forget
+    include verify/verify
+    include reset/reset

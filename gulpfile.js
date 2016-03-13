@@ -13,20 +13,20 @@ var paths = {
   materialize: './public/materialize/**/*.scss'
 };
 
-gulp.task('clean', function (callback) {
-  del(['./bin', './public/materialize/css'], callback);
+gulp.task('clean', function(cb) {
+  del(['./bin', './public/materialize/css'], cb);
 });
 
-gulp.task('materialize', function () {
+gulp.task('materialize', function() {
   return gulp.src(paths.materialize, {base: './public/materialize/sass'})
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./public/materialize/css'))
     .pipe(browserSync.stream());
 });
 
-gulp.task('sass', function () {
+gulp.task('sass', function() {
   return gulp.src(paths.sass, {base: './'})
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass())
     .pipe(gulp.dest('./bin'))
     .pipe(browserSync.stream());
 });
@@ -61,6 +61,7 @@ gulp.task('browser-sync', ['materialize', 'sass', 'livescript'], function () {
   gulp.watch(paths.ls, ['livescript']);
 });
 
-gulp.task('default', function(callback) {
-  runSequence('clean', 'server', callback);
+gulp.task('default', function(cb) {
+  runSequence('server', cb);
+  // runSequence('clean', 'server', cb);
 });
